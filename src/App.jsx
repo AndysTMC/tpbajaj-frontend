@@ -16,7 +16,7 @@ function App() {
   function handleSubmit() {
     try {
       JSON.parse(apiInput);
-      fetch('http://localhost:4000/bfhl', {
+      fetch('https://tpbajaj-backend.onrender.com/bfhl', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -24,7 +24,6 @@ function App() {
         body: JSON.stringify(JSON.parse(apiInput))
       }).then(res => res.json())
         .then(data => {
-          console.log(data);
           setApiResponse(data);
         })
         .catch((e) => {
